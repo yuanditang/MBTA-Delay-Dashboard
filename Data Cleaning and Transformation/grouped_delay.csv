@@ -1,0 +1,1032 @@
+route_id,stop_name,year,delay_duration
+Blue,Airport,2020,283428.0
+Blue,Airport,2021,36345.0
+Blue,Airport,2022,5729123.0
+Blue,Airport,2023,83922.0
+Blue,Aquarium,2020,1192.0
+Blue,Aquarium,2021,15838.0
+Blue,Aquarium,2022,5761312.0
+Blue,Aquarium,2023,14913.0
+Blue,Beachmont,2020,40886.0
+Blue,Beachmont,2021,63281.0
+Blue,Beachmont,2022,35056.0
+Blue,Beachmont,2023,17627.0
+Blue,Bowdoin,2020,596.0
+Blue,Bowdoin,2021,7919.0
+Blue,Bowdoin,2022,2862227.0
+Blue,Bowdoin,2023,1060.0
+Blue,Government Center,2020,1192.0
+Blue,Government Center,2021,15838.0
+Blue,Government Center,2022,5719643.0
+Blue,Government Center,2023,9578.0
+Blue,Maverick,2020,243942.0
+Blue,Maverick,2021,39524.0
+Blue,Maverick,2022,5719008.0
+Blue,Maverick,2023,78203.0
+Blue,Orient Heights,2020,45148.0
+Blue,Orient Heights,2021,74219.0
+Blue,Orient Heights,2022,55292.0
+Blue,Orient Heights,2023,89316.0
+Blue,Revere Beach,2020,40886.0
+Blue,Revere Beach,2021,63281.0
+Blue,Revere Beach,2022,35056.0
+Blue,Revere Beach,2023,17627.0
+Blue,State,2020,1192.0
+Blue,State,2021,15838.0
+Blue,State,2022,5721300.0
+Blue,State,2023,9578.0
+Blue,Suffolk Downs,2020,42078.0
+Blue,Suffolk Downs,2021,63281.0
+Blue,Suffolk Downs,2022,35385.0
+Blue,Suffolk Downs,2023,86311.0
+Blue,Wonderland,2020,19395.0
+Blue,Wonderland,2021,32501.0
+Blue,Wonderland,2022,15032.0
+Blue,Wonderland,2023,7646.0
+Blue,Wood Island,2020,42624.0
+Blue,Wood Island,2021,18105.0
+Blue,Wood Island,2022,36158.0
+Blue,Wood Island,2023,83922.0
+Green-B,Allston Street,2020,52915.0
+Green-B,Allston Street,2021,139441.0
+Green-B,Allston Street,2022,130633.0
+Green-B,Allston Street,2023,331333.0
+Green-B,Amory Street,2021,4814.0
+Green-B,Amory Street,2022,70405.0
+Green-B,Amory Street,2023,277813.0
+Green-B,Arlington,2020,609152.0
+Green-B,Arlington,2021,596680.0
+Green-B,Arlington,2022,1768648.0
+Green-B,Arlington,2023,2179868.0
+Green-B,Babcock Street,2021,4814.0
+Green-B,Babcock Street,2022,110020.0
+Green-B,Babcock Street,2023,368603.0
+Green-B,Back of the Hill,2022,33647.0
+Green-B,Back of the Hill,2023,18620.0
+Green-B,Ball Square,2022,6586.0
+Green-B,Ball Square,2023,272441.0
+Green-B,Beaconsfield,2021,1858.0
+Green-B,Beaconsfield,2022,36707.0
+Green-B,Beaconsfield,2023,167329.0
+Green-B,Blandford Street,2020,26123.0
+Green-B,Blandford Street,2021,106491.0
+Green-B,Blandford Street,2022,127781.0
+Green-B,Blandford Street,2023,275490.0
+Green-B,Boston College,2020,20722.0
+Green-B,Boston College,2021,23048.0
+Green-B,Boston College,2022,94573.0
+Green-B,Boston College,2023,176007.0
+Green-B,Boston University Central,2020,26123.0
+Green-B,Boston University Central,2021,106491.0
+Green-B,Boston University Central,2022,70405.0
+Green-B,Boston University Central,2023,279780.0
+Green-B,Boston University East,2020,26123.0
+Green-B,Boston University East,2021,106491.0
+Green-B,Boston University East,2022,70405.0
+Green-B,Boston University East,2023,279780.0
+Green-B,Boylston,2020,609152.0
+Green-B,Boylston,2021,596680.0
+Green-B,Boylston,2022,1750772.0
+Green-B,Boylston,2023,2174776.0
+Green-B,Brandon Hall,2021,0.0
+Green-B,Brandon Hall,2022,66025.0
+Green-B,Brandon Hall,2023,130569.0
+Green-B,Brigham Circle,2022,28295.0
+Green-B,Brigham Circle,2023,18620.0
+Green-B,Brookline Hills,2021,1858.0
+Green-B,Brookline Hills,2022,36707.0
+Green-B,Brookline Hills,2023,169296.0
+Green-B,Brookline Village,2021,1858.0
+Green-B,Brookline Village,2022,36707.0
+Green-B,Brookline Village,2023,169296.0
+Green-B,Chestnut Hill,2022,26866.0
+Green-B,Chestnut Hill,2023,125579.0
+Green-B,Chestnut Hill Avenue,2020,54828.0
+Green-B,Chestnut Hill Avenue,2021,29892.0
+Green-B,Chestnut Hill Avenue,2022,194049.0
+Green-B,Chestnut Hill Avenue,2023,337570.0
+Green-B,Chiswick Road,2020,54828.0
+Green-B,Chiswick Road,2021,29892.0
+Green-B,Chiswick Road,2022,185878.0
+Green-B,Chiswick Road,2023,337570.0
+Green-B,Cleveland Circle,2021,0.0
+Green-B,Cleveland Circle,2022,33399.0
+Green-B,Cleveland Circle,2023,63003.0
+Green-B,Coolidge Corner,2021,0.0
+Green-B,Coolidge Corner,2022,66025.0
+Green-B,Coolidge Corner,2023,174286.0
+Green-B,Copley,2020,584896.0
+Green-B,Copley,2021,603268.0
+Green-B,Copley,2022,1786964.0
+Green-B,Copley,2023,2134008.0
+Green-B,Dean Road,2021,0.0
+Green-B,Dean Road,2022,71377.0
+Green-B,Dean Road,2023,130569.0
+Green-B,East Somerville,2022,6586.0
+Green-B,East Somerville,2023,268556.0
+Green-B,Eliot,2022,13401.0
+Green-B,Eliot,2023,125579.0
+Green-B,Englewood Avenue,2021,0.0
+Green-B,Englewood Avenue,2022,71377.0
+Green-B,Englewood Avenue,2023,130569.0
+Green-B,Fairbanks Street,2021,0.0
+Green-B,Fairbanks Street,2022,71377.0
+Green-B,Fairbanks Street,2023,130569.0
+Green-B,Fenway,2021,1858.0
+Green-B,Fenway,2022,36707.0
+Green-B,Fenway,2023,169296.0
+Green-B,Fenwood Road,2022,33647.0
+Green-B,Fenwood Road,2023,18620.0
+Green-B,Gilman Square,2022,6586.0
+Green-B,Gilman Square,2023,268556.0
+Green-B,Government Center,2020,508618.0
+Green-B,Government Center,2021,509608.0
+Green-B,Government Center,2022,1254692.0
+Green-B,Government Center,2023,1869296.0
+Green-B,Griggs Street,2020,52589.0
+Green-B,Griggs Street,2021,139441.0
+Green-B,Griggs Street,2022,130633.0
+Green-B,Griggs Street,2023,331333.0
+Green-B,Harvard Avenue,2020,52589.0
+Green-B,Harvard Avenue,2021,139441.0
+Green-B,Harvard Avenue,2022,133629.0
+Green-B,Harvard Avenue,2023,331333.0
+Green-B,Hawes Street,2021,0.0
+Green-B,Hawes Street,2022,66025.0
+Green-B,Hawes Street,2023,164624.0
+Green-B,Haymarket,2020,157284.0
+Green-B,Haymarket,2021,365010.0
+Green-B,Haymarket,2022,540238.0
+Green-B,Haymarket,2023,778016.0
+Green-B,Heath Street,2022,18682.0
+Green-B,Heath Street,2023,10916.0
+Green-B,Hynes Convention Center,2020,229374.0
+Green-B,Hynes Convention Center,2021,452451.0
+Green-B,Hynes Convention Center,2022,1285197.0
+Green-B,Hynes Convention Center,2023,1525704.0
+Green-B,Kenmore,2020,213856.0
+Green-B,Kenmore,2021,423795.0
+Green-B,Kenmore,2022,1030077.0
+Green-B,Kenmore,2023,1514111.0
+Green-B,Kent Street,2021,0.0
+Green-B,Kent Street,2022,66025.0
+Green-B,Kent Street,2023,174286.0
+Green-B,Lechmere,2022,425346.0
+Green-B,Lechmere,2023,570488.0
+Green-B,Longwood,2021,1858.0
+Green-B,Longwood,2022,36707.0
+Green-B,Longwood,2023,169296.0
+Green-B,Longwood Medical Area,2022,28295.0
+Green-B,Longwood Medical Area,2023,18620.0
+Green-B,Magoun Square,2022,6586.0
+Green-B,Magoun Square,2023,270523.0
+Green-B,Medford/Tufts,2022,3293.0
+Green-B,Medford/Tufts,2023,134278.0
+Green-B,Mission Park,2022,33647.0
+Green-B,Mission Park,2023,18620.0
+Green-B,Museum of Fine Arts,2022,28295.0
+Green-B,Museum of Fine Arts,2023,18620.0
+Green-B,Newton Centre,2022,23149.0
+Green-B,Newton Centre,2023,125579.0
+Green-B,Newton Highlands,2022,28501.0
+Green-B,Newton Highlands,2023,125579.0
+Green-B,North Station,2020,157284.0
+Green-B,North Station,2021,365010.0
+Green-B,North Station,2022,608238.0
+Green-B,North Station,2023,873456.0
+Green-B,Northeastern University,2022,28295.0
+Green-B,Northeastern University,2023,18620.0
+Green-B,Packard's Corner,2020,50446.0
+Green-B,Packard's Corner,2021,141282.0
+Green-B,Packard's Corner,2022,127288.0
+Green-B,Packard's Corner,2023,332984.0
+Green-B,Park Street,2020,615013.0
+Green-B,Park Street,2021,581053.0
+Green-B,Park Street,2022,1751641.0
+Green-B,Park Street,2023,2174450.0
+Green-B,Prudential,2020,11641.0
+Green-B,Prudential,2021,74622.0
+Green-B,Prudential,2022,78384.0
+Green-B,Prudential,2023,119152.0
+Green-B,Reservoir,2021,1858.0
+Green-B,Reservoir,2022,36707.0
+Green-B,Reservoir,2023,125579.0
+Green-B,Riverside,2022,4411.0
+Green-B,Riverside,2023,63360.0
+Green-B,Riverway,2022,33647.0
+Green-B,Riverway,2023,18620.0
+Green-B,Saint Mary's Street,2021,0.0
+Green-B,Saint Mary's Street,2022,123401.0
+Green-B,Saint Mary's Street,2023,164624.0
+Green-B,Saint Paul Street,2021,0.0
+Green-B,Saint Paul Street,2022,66025.0
+Green-B,Saint Paul Street,2023,174286.0
+Green-B,Science Park/West End,2020,71958.0
+Green-B,Science Park/West End,2022,421290.0
+Green-B,Science Park/West End,2023,543716.0
+Green-B,South Street,2020,54828.0
+Green-B,South Street,2021,29892.0
+Green-B,South Street,2022,185878.0
+Green-B,South Street,2023,337570.0
+Green-B,Summit Avenue,2021,0.0
+Green-B,Summit Avenue,2022,66025.0
+Green-B,Summit Avenue,2023,130569.0
+Green-B,Sutherland Road,2020,54828.0
+Green-B,Sutherland Road,2021,29892.0
+Green-B,Sutherland Road,2022,185878.0
+Green-B,Sutherland Road,2023,337570.0
+Green-B,Symphony,2020,11641.0
+Green-B,Symphony,2021,74622.0
+Green-B,Symphony,2022,78384.0
+Green-B,Symphony,2023,74598.0
+Green-B,Tappan Street,2021,0.0
+Green-B,Tappan Street,2022,71377.0
+Green-B,Tappan Street,2023,130569.0
+Green-B,Union Square,2022,113536.0
+Green-B,Union Square,2023,116943.0
+Green-B,Waban,2022,13401.0
+Green-B,Waban,2023,125579.0
+Green-B,Warren Street,2020,50717.0
+Green-B,Warren Street,2021,137794.0
+Green-B,Warren Street,2022,116897.0
+Green-B,Warren Street,2023,331333.0
+Green-B,Washington Square,2021,0.0
+Green-B,Washington Square,2022,71377.0
+Green-B,Washington Square,2023,130569.0
+Green-B,Washington Street,2020,56309.0
+Green-B,Washington Street,2021,131444.0
+Green-B,Washington Street,2022,190876.0
+Green-B,Washington Street,2023,339309.0
+Green-B,Woodland,2022,13401.0
+Green-B,Woodland,2023,125579.0
+Green-C,Allston Street,2022,8822.0
+Green-C,Allston Street,2023,117233.0
+Green-C,Amory Street,2022,7187.0
+Green-C,Amory Street,2023,149321.0
+Green-C,Arlington,2020,600636.0
+Green-C,Arlington,2021,596680.0
+Green-C,Arlington,2022,1735184.0
+Green-C,Arlington,2023,2163532.0
+Green-C,Babcock Street,2022,7187.0
+Green-C,Babcock Street,2023,158983.0
+Green-C,Back of the Hill,2022,33647.0
+Green-C,Back of the Hill,2023,18620.0
+Green-C,Ball Square,2022,6586.0
+Green-C,Ball Square,2023,272441.0
+Green-C,Beaconsfield,2021,1858.0
+Green-C,Beaconsfield,2022,36707.0
+Green-C,Beaconsfield,2023,167329.0
+Green-C,Blandford Street,2022,64563.0
+Green-C,Blandford Street,2023,151288.0
+Green-C,Boston College,2022,4411.0
+Green-C,Boston College,2023,56335.0
+Green-C,Boston University Central,2022,7187.0
+Green-C,Boston University Central,2023,151288.0
+Green-C,Boston University East,2022,7187.0
+Green-C,Boston University East,2023,151288.0
+Green-C,Boylston,2020,600636.0
+Green-C,Boylston,2021,596680.0
+Green-C,Boylston,2022,1717308.0
+Green-C,Boylston,2023,2158440.0
+Green-C,Brandon Hall,2020,46580.0
+Green-C,Brandon Hall,2021,8586.0
+Green-C,Brandon Hall,2022,156154.0
+Green-C,Brandon Hall,2023,253204.0
+Green-C,Brigham Circle,2022,28295.0
+Green-C,Brigham Circle,2023,18620.0
+Green-C,Brookline Hills,2021,1858.0
+Green-C,Brookline Hills,2022,36707.0
+Green-C,Brookline Hills,2023,169296.0
+Green-C,Brookline Village,2021,1858.0
+Green-C,Brookline Village,2022,36707.0
+Green-C,Brookline Village,2023,169296.0
+Green-C,Chestnut Hill,2022,26866.0
+Green-C,Chestnut Hill,2023,125579.0
+Green-C,Chestnut Hill Avenue,2022,8822.0
+Green-C,Chestnut Hill Avenue,2023,117233.0
+Green-C,Chiswick Road,2022,8822.0
+Green-C,Chiswick Road,2023,117233.0
+Green-C,Cleveland Circle,2020,22134.0
+Green-C,Cleveland Circle,2021,3700.0
+Green-C,Cleveland Circle,2022,73454.0
+Green-C,Cleveland Circle,2023,119771.0
+Green-C,Coolidge Corner,2020,54054.0
+Green-C,Coolidge Corner,2021,9198.0
+Green-C,Coolidge Corner,2022,136084.0
+Green-C,Coolidge Corner,2023,296921.0
+Green-C,Copley,2020,576380.0
+Green-C,Copley,2021,596680.0
+Green-C,Copley,2022,1753500.0
+Green-C,Copley,2023,2117672.0
+Green-C,Dean Road,2020,46580.0
+Green-C,Dean Road,2021,8586.0
+Green-C,Dean Road,2022,157905.0
+Green-C,Dean Road,2023,245110.0
+Green-C,East Somerville,2022,6586.0
+Green-C,East Somerville,2023,268556.0
+Green-C,Eliot,2022,13401.0
+Green-C,Eliot,2023,125579.0
+Green-C,Englewood Avenue,2020,46580.0
+Green-C,Englewood Avenue,2021,8586.0
+Green-C,Englewood Avenue,2022,157144.0
+Green-C,Englewood Avenue,2023,245110.0
+Green-C,Fairbanks Street,2020,46580.0
+Green-C,Fairbanks Street,2021,8586.0
+Green-C,Fairbanks Street,2022,161506.0
+Green-C,Fairbanks Street,2023,253204.0
+Green-C,Fenway,2021,1858.0
+Green-C,Fenway,2022,36707.0
+Green-C,Fenway,2023,169296.0
+Green-C,Fenwood Road,2022,33647.0
+Green-C,Fenwood Road,2023,18620.0
+Green-C,Gilman Square,2022,6586.0
+Green-C,Gilman Square,2023,268556.0
+Green-C,Government Center,2020,508618.0
+Green-C,Government Center,2021,509608.0
+Green-C,Government Center,2022,1188296.0
+Green-C,Government Center,2023,1857044.0
+Green-C,Griggs Street,2022,8822.0
+Green-C,Griggs Street,2023,117233.0
+Green-C,Harvard Avenue,2022,12539.0
+Green-C,Harvard Avenue,2023,117233.0
+Green-C,Hawes Street,2020,32448.0
+Green-C,Hawes Street,2021,4783.0
+Green-C,Hawes Street,2022,128336.0
+Green-C,Hawes Street,2023,261789.0
+Green-C,Haymarket,2020,157284.0
+Green-C,Haymarket,2021,365010.0
+Green-C,Haymarket,2022,540238.0
+Green-C,Haymarket,2023,778016.0
+Green-C,Heath Street,2022,18682.0
+Green-C,Heath Street,2023,10916.0
+Green-C,Hynes Convention Center,2020,222987.0
+Green-C,Hynes Convention Center,2021,447510.0
+Green-C,Hynes Convention Center,2022,1262967.0
+Green-C,Hynes Convention Center,2023,1513452.0
+Green-C,Kenmore,2020,217080.0
+Green-C,Kenmore,2021,420822.0
+Green-C,Kenmore,2022,1115366.0
+Green-C,Kenmore,2023,1493970.0
+Green-C,Kent Street,2020,32448.0
+Green-C,Kent Street,2021,4783.0
+Green-C,Kent Street,2022,128336.0
+Green-C,Kent Street,2023,271451.0
+Green-C,Lechmere,2022,425346.0
+Green-C,Lechmere,2023,570488.0
+Green-C,Longwood,2021,1858.0
+Green-C,Longwood,2022,36707.0
+Green-C,Longwood,2023,169296.0
+Green-C,Longwood Medical Area,2022,28295.0
+Green-C,Longwood Medical Area,2023,18620.0
+Green-C,Magoun Square,2022,6586.0
+Green-C,Magoun Square,2023,270523.0
+Green-C,Medford/Tufts,2022,3293.0
+Green-C,Medford/Tufts,2023,134278.0
+Green-C,Mission Park,2022,33647.0
+Green-C,Mission Park,2023,18620.0
+Green-C,Museum of Fine Arts,2022,28295.0
+Green-C,Museum of Fine Arts,2023,18620.0
+Green-C,Newton Centre,2022,23149.0
+Green-C,Newton Centre,2023,125579.0
+Green-C,Newton Highlands,2022,28501.0
+Green-C,Newton Highlands,2023,125579.0
+Green-C,North Station,2020,157284.0
+Green-C,North Station,2021,365010.0
+Green-C,North Station,2022,608238.0
+Green-C,North Station,2023,873456.0
+Green-C,Northeastern University,2022,28295.0
+Green-C,Northeastern University,2023,18620.0
+Green-C,Packard's Corner,2022,7187.0
+Green-C,Packard's Corner,2023,117233.0
+Green-C,Park Street,2020,612884.0
+Green-C,Park Street,2021,581053.0
+Green-C,Park Street,2022,1725290.0
+Green-C,Park Street,2023,2164240.0
+Green-C,Prudential,2020,11641.0
+Green-C,Prudential,2021,74622.0
+Green-C,Prudential,2022,78384.0
+Green-C,Prudential,2023,119152.0
+Green-C,Reservoir,2021,1858.0
+Green-C,Reservoir,2022,36707.0
+Green-C,Reservoir,2023,125579.0
+Green-C,Riverside,2022,4411.0
+Green-C,Riverside,2023,63360.0
+Green-C,Riverway,2022,33647.0
+Green-C,Riverway,2023,18620.0
+Green-C,Saint Mary's Street,2020,32448.0
+Green-C,Saint Mary's Street,2021,4783.0
+Green-C,Saint Mary's Street,2022,185712.0
+Green-C,Saint Mary's Street,2023,261789.0
+Green-C,Saint Paul Street,2020,32448.0
+Green-C,Saint Paul Street,2021,4783.0
+Green-C,Saint Paul Street,2022,128336.0
+Green-C,Saint Paul Street,2023,271451.0
+Green-C,Science Park/West End,2020,71958.0
+Green-C,Science Park/West End,2022,421290.0
+Green-C,Science Park/West End,2023,543716.0
+Green-C,South Street,2022,8822.0
+Green-C,South Street,2023,117233.0
+Green-C,Summit Avenue,2020,46580.0
+Green-C,Summit Avenue,2021,8586.0
+Green-C,Summit Avenue,2022,156154.0
+Green-C,Summit Avenue,2023,253204.0
+Green-C,Sutherland Road,2022,8822.0
+Green-C,Sutherland Road,2023,117233.0
+Green-C,Symphony,2020,11641.0
+Green-C,Symphony,2021,74622.0
+Green-C,Symphony,2022,78384.0
+Green-C,Symphony,2023,74598.0
+Green-C,Tappan Street,2020,46580.0
+Green-C,Tappan Street,2021,8586.0
+Green-C,Tappan Street,2022,160550.0
+Green-C,Tappan Street,2023,245110.0
+Green-C,Union Square,2022,113536.0
+Green-C,Union Square,2023,116943.0
+Green-C,Waban,2022,13401.0
+Green-C,Waban,2023,125579.0
+Green-C,Warren Street,2022,8822.0
+Green-C,Warren Street,2023,117233.0
+Green-C,Washington Square,2020,46580.0
+Green-C,Washington Square,2021,8586.0
+Green-C,Washington Square,2022,161506.0
+Green-C,Washington Square,2023,250960.0
+Green-C,Washington Street,2022,8822.0
+Green-C,Washington Street,2023,117233.0
+Green-C,Woodland,2022,13401.0
+Green-C,Woodland,2023,125579.0
+Green-D,Allston Street,2022,8822.0
+Green-D,Allston Street,2023,117233.0
+Green-D,Amory Street,2022,7187.0
+Green-D,Amory Street,2023,149321.0
+Green-D,Arlington,2020,600636.0
+Green-D,Arlington,2021,596680.0
+Green-D,Arlington,2022,1760536.0
+Green-D,Arlington,2023,2162416.0
+Green-D,Babcock Street,2022,7187.0
+Green-D,Babcock Street,2023,158983.0
+Green-D,Back of the Hill,2022,33647.0
+Green-D,Back of the Hill,2023,18620.0
+Green-D,Ball Square,2022,6586.0
+Green-D,Ball Square,2023,277455.0
+Green-D,Beaconsfield,2020,185351.0
+Green-D,Beaconsfield,2021,95256.0
+Green-D,Beaconsfield,2022,140010.0
+Green-D,Beaconsfield,2023,239348.0
+Green-D,Blandford Street,2022,64563.0
+Green-D,Blandford Street,2023,151288.0
+Green-D,Boston College,2022,4411.0
+Green-D,Boston College,2023,56335.0
+Green-D,Boston University Central,2022,7187.0
+Green-D,Boston University Central,2023,151288.0
+Green-D,Boston University East,2022,7187.0
+Green-D,Boston University East,2023,151288.0
+Green-D,Boylston,2020,600636.0
+Green-D,Boylston,2021,596680.0
+Green-D,Boylston,2022,1742660.0
+Green-D,Boylston,2023,2157324.0
+Green-D,Brandon Hall,2021,0.0
+Green-D,Brandon Hall,2022,66025.0
+Green-D,Brandon Hall,2023,130569.0
+Green-D,Brigham Circle,2022,28295.0
+Green-D,Brigham Circle,2023,18620.0
+Green-D,Brookline Hills,2020,185351.0
+Green-D,Brookline Hills,2021,5541.0
+Green-D,Brookline Hills,2022,140010.0
+Green-D,Brookline Hills,2023,241315.0
+Green-D,Brookline Village,2020,182533.0
+Green-D,Brookline Village,2021,93880.0
+Green-D,Brookline Village,2022,140010.0
+Green-D,Brookline Village,2023,241315.0
+Green-D,Chestnut Hill,2020,235745.0
+Green-D,Chestnut Hill,2021,139299.0
+Green-D,Chestnut Hill,2022,181802.0
+Green-D,Chestnut Hill,2023,206097.0
+Green-D,Chestnut Hill Avenue,2022,8822.0
+Green-D,Chestnut Hill Avenue,2023,117233.0
+Green-D,Chiswick Road,2022,8822.0
+Green-D,Chiswick Road,2023,117233.0
+Green-D,Cleveland Circle,2021,0.0
+Green-D,Cleveland Circle,2022,33399.0
+Green-D,Cleveland Circle,2023,63003.0
+Green-D,Coolidge Corner,2021,0.0
+Green-D,Coolidge Corner,2022,66025.0
+Green-D,Coolidge Corner,2023,174286.0
+Green-D,Copley,2020,576380.0
+Green-D,Copley,2021,596680.0
+Green-D,Copley,2022,1778852.0
+Green-D,Copley,2023,2116556.0
+Green-D,Dean Road,2021,0.0
+Green-D,Dean Road,2022,71377.0
+Green-D,Dean Road,2023,130569.0
+Green-D,East Somerville,2022,6586.0
+Green-D,East Somerville,2023,273570.0
+Green-D,Eliot,2020,259511.0
+Green-D,Eliot,2021,139299.0
+Green-D,Eliot,2022,170208.0
+Green-D,Eliot,2023,206097.0
+Green-D,Englewood Avenue,2021,0.0
+Green-D,Englewood Avenue,2022,71377.0
+Green-D,Englewood Avenue,2023,130569.0
+Green-D,Fairbanks Street,2021,0.0
+Green-D,Fairbanks Street,2022,71377.0
+Green-D,Fairbanks Street,2023,130569.0
+Green-D,Fenway,2020,182533.0
+Green-D,Fenway,2021,82903.0
+Green-D,Fenway,2022,140010.0
+Green-D,Fenway,2023,234893.0
+Green-D,Fenwood Road,2022,33647.0
+Green-D,Fenwood Road,2023,18620.0
+Green-D,Gilman Square,2022,6586.0
+Green-D,Gilman Square,2023,273570.0
+Green-D,Government Center,2020,508618.0
+Green-D,Government Center,2021,509608.0
+Green-D,Government Center,2022,1188296.0
+Green-D,Government Center,2023,1852530.0
+Green-D,Griggs Street,2022,8822.0
+Green-D,Griggs Street,2023,117233.0
+Green-D,Harvard Avenue,2022,12539.0
+Green-D,Harvard Avenue,2023,117233.0
+Green-D,Hawes Street,2021,0.0
+Green-D,Hawes Street,2022,66025.0
+Green-D,Hawes Street,2023,164624.0
+Green-D,Haymarket,2020,157284.0
+Green-D,Haymarket,2021,365010.0
+Green-D,Haymarket,2022,540238.0
+Green-D,Haymarket,2023,778016.0
+Green-D,Heath Street,2022,18682.0
+Green-D,Heath Street,2023,10916.0
+Green-D,Hynes Convention Center,2020,222987.0
+Green-D,Hynes Convention Center,2021,447510.0
+Green-D,Hynes Convention Center,2022,1253547.0
+Green-D,Hynes Convention Center,2023,1512615.0
+Green-D,Kenmore,2020,500870.0
+Green-D,Kenmore,2021,432148.0
+Green-D,Kenmore,2022,1061208.0
+Green-D,Kenmore,2023,1524364.0
+Green-D,Kent Street,2021,0.0
+Green-D,Kent Street,2022,66025.0
+Green-D,Kent Street,2023,174286.0
+Green-D,Lechmere,2022,425346.0
+Green-D,Lechmere,2023,580516.0
+Green-D,Longwood,2020,182533.0
+Green-D,Longwood,2021,93880.0
+Green-D,Longwood,2022,140010.0
+Green-D,Longwood,2023,241315.0
+Green-D,Longwood Medical Area,2022,28295.0
+Green-D,Longwood Medical Area,2023,18620.0
+Green-D,Magoun Square,2022,6586.0
+Green-D,Magoun Square,2023,275537.0
+Green-D,Medford/Tufts,2022,3293.0
+Green-D,Medford/Tufts,2023,134278.0
+Green-D,Mission Park,2022,33647.0
+Green-D,Mission Park,2023,18620.0
+Green-D,Museum of Fine Arts,2022,28295.0
+Green-D,Museum of Fine Arts,2023,18620.0
+Green-D,Newton Centre,2020,236825.0
+Green-D,Newton Centre,2021,139299.0
+Green-D,Newton Centre,2022,197231.0
+Green-D,Newton Centre,2023,206097.0
+Green-D,Newton Highlands,2020,261161.0
+Green-D,Newton Highlands,2021,139299.0
+Green-D,Newton Highlands,2022,200602.0
+Green-D,Newton Highlands,2023,206097.0
+Green-D,North Station,2020,157284.0
+Green-D,North Station,2021,365010.0
+Green-D,North Station,2022,608238.0
+Green-D,North Station,2023,873456.0
+Green-D,Northeastern University,2022,28295.0
+Green-D,Northeastern University,2023,18620.0
+Green-D,Packard's Corner,2022,7187.0
+Green-D,Packard's Corner,2023,117233.0
+Green-D,Park Street,2020,612884.0
+Green-D,Park Street,2021,581053.0
+Green-D,Park Street,2022,1731628.0
+Green-D,Park Street,2023,2161156.0
+Green-D,Prudential,2020,11641.0
+Green-D,Prudential,2021,74622.0
+Green-D,Prudential,2022,78384.0
+Green-D,Prudential,2023,119152.0
+Green-D,Reservoir,2020,246381.0
+Green-D,Reservoir,2021,135522.0
+Green-D,Reservoir,2022,215072.0
+Green-D,Reservoir,2023,218522.0
+Green-D,Riverside,2020,126033.0
+Green-D,Riverside,2021,77319.0
+Green-D,Riverside,2022,89565.0
+Green-D,Riverside,2023,102945.0
+Green-D,Riverway,2022,33647.0
+Green-D,Riverway,2023,18620.0
+Green-D,Saint Mary's Street,2021,0.0
+Green-D,Saint Mary's Street,2022,123401.0
+Green-D,Saint Mary's Street,2023,164624.0
+Green-D,Saint Paul Street,2021,0.0
+Green-D,Saint Paul Street,2022,66025.0
+Green-D,Saint Paul Street,2023,174286.0
+Green-D,Science Park/West End,2020,71958.0
+Green-D,Science Park/West End,2022,421290.0
+Green-D,Science Park/West End,2023,543716.0
+Green-D,South Street,2022,8822.0
+Green-D,South Street,2023,117233.0
+Green-D,Summit Avenue,2021,0.0
+Green-D,Summit Avenue,2022,66025.0
+Green-D,Summit Avenue,2023,130569.0
+Green-D,Sutherland Road,2022,8822.0
+Green-D,Sutherland Road,2023,117233.0
+Green-D,Symphony,2020,11641.0
+Green-D,Symphony,2021,74622.0
+Green-D,Symphony,2022,78384.0
+Green-D,Symphony,2023,74598.0
+Green-D,Tappan Street,2021,0.0
+Green-D,Tappan Street,2022,71377.0
+Green-D,Tappan Street,2023,130569.0
+Green-D,Union Square,2022,113536.0
+Green-D,Union Square,2023,153878.0
+Green-D,Waban,2020,254182.0
+Green-D,Waban,2021,135983.0
+Green-D,Waban,2022,170208.0
+Green-D,Waban,2023,204348.0
+Green-D,Warren Street,2022,8822.0
+Green-D,Warren Street,2023,117233.0
+Green-D,Washington Square,2021,0.0
+Green-D,Washington Square,2022,71377.0
+Green-D,Washington Square,2023,130569.0
+Green-D,Washington Street,2022,8822.0
+Green-D,Washington Street,2023,117233.0
+Green-D,Woodland,2020,239220.0
+Green-D,Woodland,2021,134195.0
+Green-D,Woodland,2022,170208.0
+Green-D,Woodland,2023,204348.0
+Green-E,Allston Street,2022,8822.0
+Green-E,Allston Street,2023,117233.0
+Green-E,Amory Street,2022,7187.0
+Green-E,Amory Street,2023,149321.0
+Green-E,Arlington,2020,600636.0
+Green-E,Arlington,2021,600892.0
+Green-E,Arlington,2022,1726448.0
+Green-E,Arlington,2023,2277236.0
+Green-E,Babcock Street,2022,7187.0
+Green-E,Babcock Street,2023,158983.0
+Green-E,Back of the Hill,2020,44138.0
+Green-E,Back of the Hill,2021,12163.0
+Green-E,Back of the Hill,2022,84413.0
+Green-E,Back of the Hill,2023,125457.0
+Green-E,Ball Square,2022,6586.0
+Green-E,Ball Square,2023,361843.0
+Green-E,Beaconsfield,2021,1858.0
+Green-E,Beaconsfield,2022,36707.0
+Green-E,Beaconsfield,2023,167329.0
+Green-E,Blandford Street,2022,64563.0
+Green-E,Blandford Street,2023,151288.0
+Green-E,Boston College,2022,4411.0
+Green-E,Boston College,2023,56335.0
+Green-E,Boston University Central,2022,7187.0
+Green-E,Boston University Central,2023,151288.0
+Green-E,Boston University East,2022,7187.0
+Green-E,Boston University East,2023,151288.0
+Green-E,Boylston,2020,600636.0
+Green-E,Boylston,2021,600892.0
+Green-E,Boylston,2022,1708572.0
+Green-E,Boylston,2023,2272144.0
+Green-E,Brandon Hall,2021,0.0
+Green-E,Brandon Hall,2022,66025.0
+Green-E,Brandon Hall,2023,130569.0
+Green-E,Brigham Circle,2020,43088.0
+Green-E,Brigham Circle,2021,13054.0
+Green-E,Brigham Circle,2022,61207.0
+Green-E,Brigham Circle,2023,116887.0
+Green-E,Brookline Hills,2021,1858.0
+Green-E,Brookline Hills,2022,36707.0
+Green-E,Brookline Hills,2023,169296.0
+Green-E,Brookline Village,2021,1858.0
+Green-E,Brookline Village,2022,36707.0
+Green-E,Brookline Village,2023,169296.0
+Green-E,Chestnut Hill,2022,26866.0
+Green-E,Chestnut Hill,2023,125579.0
+Green-E,Chestnut Hill Avenue,2022,8822.0
+Green-E,Chestnut Hill Avenue,2023,117233.0
+Green-E,Chiswick Road,2022,8822.0
+Green-E,Chiswick Road,2023,117233.0
+Green-E,Cleveland Circle,2021,0.0
+Green-E,Cleveland Circle,2022,33399.0
+Green-E,Cleveland Circle,2023,63003.0
+Green-E,Coolidge Corner,2021,0.0
+Green-E,Coolidge Corner,2022,66025.0
+Green-E,Coolidge Corner,2023,174286.0
+Green-E,Copley,2020,576380.0
+Green-E,Copley,2021,605608.0
+Green-E,Copley,2022,1750152.0
+Green-E,Copley,2023,2291712.0
+Green-E,Dean Road,2021,0.0
+Green-E,Dean Road,2022,71377.0
+Green-E,Dean Road,2023,130569.0
+Green-E,East Somerville,2022,6586.0
+Green-E,East Somerville,2023,382530.0
+Green-E,Eliot,2022,13401.0
+Green-E,Eliot,2023,125579.0
+Green-E,Englewood Avenue,2021,0.0
+Green-E,Englewood Avenue,2022,71377.0
+Green-E,Englewood Avenue,2023,130569.0
+Green-E,Fairbanks Street,2021,0.0
+Green-E,Fairbanks Street,2022,71377.0
+Green-E,Fairbanks Street,2023,130569.0
+Green-E,Fenway,2021,1858.0
+Green-E,Fenway,2022,36707.0
+Green-E,Fenway,2023,169296.0
+Green-E,Fenwood Road,2020,44138.0
+Green-E,Fenwood Road,2021,12163.0
+Green-E,Fenwood Road,2022,88921.0
+Green-E,Fenwood Road,2023,116887.0
+Green-E,Gilman Square,2022,6586.0
+Green-E,Gilman Square,2023,357958.0
+Green-E,Government Center,2020,508618.0
+Green-E,Government Center,2021,513820.0
+Green-E,Government Center,2022,1202888.0
+Green-E,Government Center,2023,1939416.0
+Green-E,Griggs Street,2022,8822.0
+Green-E,Griggs Street,2023,117233.0
+Green-E,Harvard Avenue,2022,12539.0
+Green-E,Harvard Avenue,2023,117233.0
+Green-E,Hawes Street,2021,0.0
+Green-E,Hawes Street,2022,66025.0
+Green-E,Hawes Street,2023,164624.0
+Green-E,Haymarket,2020,157284.0
+Green-E,Haymarket,2021,367116.0
+Green-E,Haymarket,2022,555674.0
+Green-E,Haymarket,2023,831244.0
+Green-E,Heath Street,2020,26807.0
+Green-E,Heath Street,2021,10827.0
+Green-E,Heath Street,2022,45139.0
+Green-E,Heath Street,2023,67729.0
+Green-E,Hynes Convention Center,2020,222987.0
+Green-E,Hynes Convention Center,2021,447510.0
+Green-E,Hynes Convention Center,2022,1253547.0
+Green-E,Hynes Convention Center,2023,1491804.0
+Green-E,Kenmore,2020,202132.0
+Green-E,Kenmore,2021,420822.0
+Green-E,Kenmore,2022,1008574.0
+Green-E,Kenmore,2023,1467638.0
+Green-E,Kent Street,2021,0.0
+Green-E,Kent Street,2022,66025.0
+Green-E,Kent Street,2023,174286.0
+Green-E,Lechmere,2022,449282.0
+Green-E,Lechmere,2023,730752.0
+Green-E,Longwood,2021,1858.0
+Green-E,Longwood,2022,36707.0
+Green-E,Longwood,2023,169296.0
+Green-E,Longwood Medical Area,2020,35456.0
+Green-E,Longwood Medical Area,2021,11508.0
+Green-E,Longwood Medical Area,2022,43291.0
+Green-E,Longwood Medical Area,2023,88817.0
+Green-E,Magoun Square,2022,6586.0
+Green-E,Magoun Square,2023,359925.0
+Green-E,Medford/Tufts,2022,3293.0
+Green-E,Medford/Tufts,2023,178979.0
+Green-E,Mission Park,2020,44138.0
+Green-E,Mission Park,2021,12163.0
+Green-E,Mission Park,2022,88921.0
+Green-E,Mission Park,2023,125403.0
+Green-E,Museum of Fine Arts,2020,35456.0
+Green-E,Museum of Fine Arts,2021,11508.0
+Green-E,Museum of Fine Arts,2022,43291.0
+Green-E,Museum of Fine Arts,2023,91585.0
+Green-E,Newton Centre,2022,23149.0
+Green-E,Newton Centre,2023,125579.0
+Green-E,Newton Highlands,2022,28501.0
+Green-E,Newton Highlands,2023,125579.0
+Green-E,North Station,2020,157284.0
+Green-E,North Station,2021,367116.0
+Green-E,North Station,2022,637882.0
+Green-E,North Station,2023,1020784.0
+Green-E,Northeastern University,2020,35456.0
+Green-E,Northeastern University,2021,11508.0
+Green-E,Northeastern University,2022,43291.0
+Green-E,Northeastern University,2023,91585.0
+Green-E,Packard's Corner,2022,7187.0
+Green-E,Packard's Corner,2023,117233.0
+Green-E,Park Street,2020,612884.0
+Green-E,Park Street,2021,582106.0
+Green-E,Park Street,2022,1723106.0
+Green-E,Park Street,2023,2227748.0
+Green-E,Prudential,2020,22857.0
+Green-E,Prudential,2021,80338.0
+Green-E,Prudential,2022,93380.0
+Green-E,Prudential,2023,192117.0
+Green-E,Reservoir,2021,1858.0
+Green-E,Reservoir,2022,36707.0
+Green-E,Reservoir,2023,125579.0
+Green-E,Riverside,2022,4411.0
+Green-E,Riverside,2023,63360.0
+Green-E,Riverway,2020,44138.0
+Green-E,Riverway,2021,12163.0
+Green-E,Riverway,2022,84413.0
+Green-E,Riverway,2023,125457.0
+Green-E,Saint Mary's Street,2021,0.0
+Green-E,Saint Mary's Street,2022,123401.0
+Green-E,Saint Mary's Street,2023,164624.0
+Green-E,Saint Paul Street,2021,0.0
+Green-E,Saint Paul Street,2022,66025.0
+Green-E,Saint Paul Street,2023,174286.0
+Green-E,Science Park/West End,2020,71958.0
+Green-E,Science Park/West End,2022,445226.0
+Green-E,Science Park/West End,2023,691044.0
+Green-E,South Street,2022,8822.0
+Green-E,South Street,2023,117233.0
+Green-E,Summit Avenue,2021,0.0
+Green-E,Summit Avenue,2022,66025.0
+Green-E,Summit Avenue,2023,130569.0
+Green-E,Sutherland Road,2022,8822.0
+Green-E,Sutherland Road,2023,117233.0
+Green-E,Symphony,2020,47097.0
+Green-E,Symphony,2021,80338.0
+Green-E,Symphony,2022,93380.0
+Green-E,Symphony,2023,147563.0
+Green-E,Tappan Street,2021,0.0
+Green-E,Tappan Street,2022,71377.0
+Green-E,Tappan Street,2023,130569.0
+Green-E,Union Square,2022,119520.0
+Green-E,Union Square,2023,116943.0
+Green-E,Waban,2022,13401.0
+Green-E,Waban,2023,125579.0
+Green-E,Warren Street,2022,8822.0
+Green-E,Warren Street,2023,117233.0
+Green-E,Washington Square,2021,0.0
+Green-E,Washington Square,2022,71377.0
+Green-E,Washington Square,2023,130569.0
+Green-E,Washington Street,2022,8822.0
+Green-E,Washington Street,2023,117233.0
+Green-E,Woodland,2022,13401.0
+Green-E,Woodland,2023,125579.0
+Mattapan,Ashmont,2023,3443.0
+Mattapan,Butler,2022,2276.0
+Mattapan,Butler,2023,22560.0
+Mattapan,Cedar Grove,2021,1241.0
+Mattapan,Central Avenue,2021,3308.0
+Mattapan,Milton,2022,3002.0
+Orange,Assembly,2020,40266.0
+Orange,Assembly,2021,236371.0
+Orange,Assembly,2022,205205.0
+Orange,Assembly,2023,86422.0
+Orange,Back Bay,2020,68219.0
+Orange,Back Bay,2021,260836.0
+Orange,Back Bay,2022,172123.0
+Orange,Back Bay,2023,47108.0
+Orange,Chinatown,2020,72368.0
+Orange,Chinatown,2021,263816.0
+Orange,Chinatown,2022,165206.0
+Orange,Chinatown,2023,45428.0
+Orange,Community College,2020,57982.0
+Orange,Community College,2021,267015.0
+Orange,Community College,2022,198875.0
+Orange,Community College,2023,90089.0
+Orange,Downtown Crossing,2020,91440.0
+Orange,Downtown Crossing,2021,322366.0
+Orange,Downtown Crossing,2022,213215.0
+Orange,Downtown Crossing,2023,45428.0
+Orange,Forest Hills,2020,33805.0
+Orange,Forest Hills,2021,125956.0
+Orange,Forest Hills,2022,63282.0
+Orange,Forest Hills,2023,16629.0
+Orange,Green Street,2020,44231.0
+Orange,Green Street,2021,196369.0
+Orange,Green Street,2022,104823.0
+Orange,Green Street,2023,20388.0
+Orange,Haymarket,2020,70774.0
+Orange,Haymarket,2021,279126.0
+Orange,Haymarket,2022,192413.0
+Orange,Haymarket,2023,32835.0
+Orange,Jackson Square,2020,58169.0
+Orange,Jackson Square,2021,186248.0
+Orange,Jackson Square,2022,106846.0
+Orange,Jackson Square,2023,21210.0
+Orange,Malden Center,2020,105401.0
+Orange,Malden Center,2021,236903.0
+Orange,Malden Center,2022,128277.0
+Orange,Malden Center,2023,108584.0
+Orange,Massachusetts Avenue,2020,54173.0
+Orange,Massachusetts Avenue,2021,202230.0
+Orange,Massachusetts Avenue,2022,98766.0
+Orange,Massachusetts Avenue,2023,23865.0
+Orange,North Station,2020,81506.0
+Orange,North Station,2021,299656.0
+Orange,North Station,2022,245590.0
+Orange,North Station,2023,90089.0
+Orange,Oak Grove,2020,50941.0
+Orange,Oak Grove,2021,126677.0
+Orange,Oak Grove,2022,80115.0
+Orange,Oak Grove,2023,60915.0
+Orange,Roxbury Crossing,2020,54565.0
+Orange,Roxbury Crossing,2021,188217.0
+Orange,Roxbury Crossing,2022,83769.0
+Orange,Roxbury Crossing,2023,55861.0
+Orange,Ruggles,2020,54173.0
+Orange,Ruggles,2021,230034.0
+Orange,Ruggles,2022,89748.0
+Orange,Ruggles,2023,23865.0
+Orange,State,2020,72502.0
+Orange,State,2021,277886.0
+Orange,State,2022,181051.0
+Orange,State,2023,68103.0
+Orange,Stony Brook,2020,47774.0
+Orange,Stony Brook,2021,209909.0
+Orange,Stony Brook,2022,104823.0
+Orange,Stony Brook,2023,20388.0
+Orange,Sullivan Square,2020,43848.0
+Orange,Sullivan Square,2021,276735.0
+Orange,Sullivan Square,2022,204071.0
+Orange,Sullivan Square,2023,87066.0
+Orange,Tufts Medical Center,2020,73897.0
+Orange,Tufts Medical Center,2021,231757.0
+Orange,Tufts Medical Center,2022,158847.0
+Orange,Tufts Medical Center,2023,46250.0
+Orange,Wellington,2020,112453.0
+Orange,Wellington,2021,248681.0
+Orange,Wellington,2022,215938.0
+Orange,Wellington,2023,108584.0
+Red,Alewife,2020,255250.0
+Red,Alewife,2021,142306.0
+Red,Alewife,2022,407276.0
+Red,Alewife,2023,436006.0
+Red,Andrew,2020,274844.0
+Red,Andrew,2021,270614.0
+Red,Andrew,2022,351480.0
+Red,Andrew,2023,1011340.0
+Red,Ashmont,2020,27795.0
+Red,Ashmont,2021,55367.0
+Red,Ashmont,2022,107094.0
+Red,Ashmont,2023,109975.0
+Red,Braintree,2020,460240.0
+Red,Braintree,2021,117841.0
+Red,Braintree,2022,320449.0
+Red,Braintree,2023,210493.0
+Red,Broadway,2020,274844.0
+Red,Broadway,2021,324058.0
+Red,Broadway,2022,353826.0
+Red,Broadway,2023,1071774.0
+Red,Central,2020,515800.0
+Red,Central,2021,379586.0
+Red,Central,2022,738570.0
+Red,Central,2023,1059362.0
+Red,Charles/MGH,2020,540180.0
+Red,Charles/MGH,2021,389390.0
+Red,Charles/MGH,2022,757022.0
+Red,Charles/MGH,2023,1023542.0
+Red,Davis,2020,499520.0
+Red,Davis,2021,259794.0
+Red,Davis,2022,711212.0
+Red,Davis,2023,881756.0
+Red,Downtown Crossing,2020,575128.0
+Red,Downtown Crossing,2021,351808.0
+Red,Downtown Crossing,2022,417636.0
+Red,Downtown Crossing,2023,1100322.0
+Red,Fields Corner,2020,103381.0
+Red,Fields Corner,2021,122770.0
+Red,Fields Corner,2022,245782.0
+Red,Fields Corner,2023,254652.0
+Red,Harvard,2020,553276.0
+Red,Harvard,2021,418430.0
+Red,Harvard,2022,751662.0
+Red,Harvard,2023,1058654.0
+Red,JFK/UMass,2020,375637.0
+Red,JFK/UMass,2021,459099.0
+Red,JFK/UMass,2022,1077243.0
+Red,JFK/UMass,2023,1445527.0
+Red,Kendall/MIT,2020,515800.0
+Red,Kendall/MIT,2021,389390.0
+Red,Kendall/MIT,2022,760686.0
+Red,Kendall/MIT,2023,1050384.0
+Red,North Quincy,2020,292868.0
+Red,North Quincy,2021,203882.0
+Red,North Quincy,2022,528888.0
+Red,North Quincy,2023,428081.0
+Red,Park Street,2020,585142.0
+Red,Park Street,2021,425530.0
+Red,Park Street,2022,769944.0
+Red,Park Street,2023,1209054.0
+Red,Porter,2020,553276.0
+Red,Porter,2021,261874.0
+Red,Porter,2022,730730.0
+Red,Porter,2023,906480.0
+Red,Quincy Adams,2020,856816.0
+Red,Quincy Adams,2021,187903.0
+Red,Quincy Adams,2022,518818.0
+Red,Quincy Adams,2023,346945.0
+Red,Quincy Center,2020,908780.0
+Red,Quincy Center,2021,201598.0
+Red,Quincy Center,2022,524638.0
+Red,Quincy Center,2023,374229.0
+Red,Savin Hill,2020,103759.0
+Red,Savin Hill,2021,122770.0
+Red,Savin Hill,2022,257824.0
+Red,Savin Hill,2023,254652.0
+Red,Shawmut,2020,69653.0
+Red,Shawmut,2021,117392.0
+Red,Shawmut,2022,241532.0
+Red,Shawmut,2023,246080.0
+Red,South Station,2020,571984.0
+Red,South Station,2021,362588.0
+Red,South Station,2022,403382.0
+Red,South Station,2023,1093320.0
+Red,Wollaston,2020,293634.0
+Red,Wollaston,2021,206976.0
+Red,Wollaston,2022,528888.0
+Red,Wollaston,2023,380991.0
