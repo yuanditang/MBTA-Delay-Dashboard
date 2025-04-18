@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTA Delay Analysis Dashboard</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="https://unpkg.com/d3-geo@3"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 1400px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #003366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .controls {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select, input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+        }
+        th:hover {
+            background-color: #e9ecef;
+        }
+        th.sorted-asc::after {
+            content: " ↑";
+            font-size: 0.8em;
+        }
+        th.sorted-desc::after {
+            content: " ↓";
+            font-size: 0.8em;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .loading {
+            padding: 20px;
+            text-align: center;
+            color: #666;
+        }
+        .error {
+            color: #dc3545;
+            padding: 20px;
+            text-align: center;
+        }
+        .note {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+        }
+        .delay-high {
+            background-color: #ffdddd;
+        }
+        .delay-medium {
+            background-color: #fff3cd;
+        }
+        .summary-stats {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .stat-card {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #003366;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .delay-hours {
+            text-align: right;
+        }
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .chart-title {
+            margin-bottom: 15px;
+            color: #003366;
+            font-weight: bold;
+        }
+        .chart-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .chart-col {
+            flex: 1;
+            min-width: 300px;
+        }
+        .tooltip {
+            position: absolute;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 4px;
+            pointer-events: none;
+            font-size: 12px;
+        }
+        
+        /* Map styles */
+        #mbta-map-container {
+            position: relative;
+            height: 600px;
+            width: 100%;
+            margin: 30px 0;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        #mbta-map {
+            height: 100%;
+            width: 100%;
+        }
+        .map-overlay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1;
+            max-width: 250px;
+        }
+        .map-tooltip {
+            position: absolute;
+            padding: 8px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 3px;
+            pointer-events: none;
+            visibility: hidden;
+            font-size: 12px;
+            z-index: 10;
+            max-width: 200px;
+        }
+        .legend {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+        }
+        .legend-size {
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            margin-right: 5px;
+            background: #666;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        .mapboxgl-ctrl-geocoder {
+            width: 100%;
+            max-width: 350px;
+            box-shadow: none;
+            border: 1px solid #ddd;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>MBTA Delay Analysis Dashboard</h1>
+    
+    <div class="controls">
+        <div class="control-group">
+            <label for="year-filter">Year:</label>
+            <select id="year-filter">
+                <option value="all">All Years</option>
+                <!-- Options will be populated dynamically -->
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="line-filter">Line:</label>
+            <select id="line-filter">
+                <option value="all">All Lines</option>
+                <!-- Options will be populated dynamically -->
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="stop-filter">Station:</label>
+            <select id="stop-filter">
+                <option value="all">All Stations</option>
+                <!-- Options will be populated dynamically -->
+            </select>
+        </div>
+    </div>
+
+    <div id="summary-container" class="summary-stats">
+        <div>Loading summary statistics...</div>
+    </div>
+    
+    <div class="chart-row" id = multiple-lines>
+        <div class="chart-col">
+            <div class="chart-container">
+                <div class="chart-title">Total Delay Minutes by Line</div>
+                <div id="line-chart"></div>
+            </div>
+        </div>
+        <div class="chart-col">
+            <div class="chart-container">
+                <div class="chart-title">Delay Distribution by Line</div>
+                <div id="pie-chart"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="chart-row">
+        <div class="chart-col">
+            <div class="chart-container">
+                <div class="chart-title">Top 10 Stations by Delay Minutes</div>
+                <div id="station-chart"></div>
+            </div>
+        </div>
+        <div class="chart-col">
+            <div class="chart-container">
+                <div class="chart-title">Delay Trends Over Years</div>
+                <div id="trend-chart"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Map Section -->
+    <div class="chart-container">
+        <div class="chart-title">MBTA Delay Map Visualization</div>
+        <div id="mbta-map-container">
+            <div id="mbta-map"></div>
+            <div class="map-overlay">
+                <div class="legend">
+                    <h4>MBTA Lines</h4>
+                    <div class="legend-item"><div class="legend-color" style="background-color: #00843D;"></div>Green Line</div>
+                    <div class="legend-item"><div class="legend-color" style="background-color: #DA291C;"></div>Red Line</div>
+                    <div class="legend-item"><div class="legend-color" style="background-color: #003DA5;"></div>Blue Line</div>
+                    <div class="legend-item"><div class="legend-color" style="background-color: #ED8B00;"></div>Orange Line</div>
+                    <div class="legend-item"><div class="legend-color" style="background-color: #A10C0C;"></div>Mattapan Trolley</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="table-container">
+        <div class="loading">Loading delay data...</div>
+    </div>
+    
+    <div class="note">
+        <p>Data shows total delay duration in minutes by station and year. Hover over charts for details.</p>
+    </div>
+
+    <div class="map-tooltip" id="map-tooltip"></div>
+
+    <script>
+        // Configuration
+        const DATA_FILE = "grouped_delay.csv";
+        const STATION_LOCATIONS = "station_location.csv";
+        mapboxgl.accessToken = 'pk.eyJ1IjoieXVhbmRpdGFuZyIsImEiOiJjbTlrYWZpbTUwbHg2MnFweXlneHMyMXloIn0.kmG_BSxS2SsxVeBINGaJag'; // Public token
+        
+        // State
+        let allData = [];
+        let processedData = [];
+        let stationLocations = [];
+        let sortColumn = "delay_minutes";
+        let sortDirection = "desc";
+        let uniqueYears = new Set();
+        let uniqueLines = new Set();
+        let uniqueStops = new Set();
+        let map;
+        let delayLayer;
+        
+        // MBTA Line Colors
+        const lineColors = {
+            "Green Line": "#00843D",
+            "Red Line": "#DA291C",
+            "Blue Line": "#003DA5",
+            "Orange Line": "#ED8B00",
+            "Mattapan Trolley": "#A10C0C"
+        };
+        
+        // Main function to load and process data
+        async function loadData() {
+            try {
+                showLoading();
+                
+                // Load the CSV files
+                const [csvData, stationData] = await Promise.all([
+                    d3.csv(DATA_FILE),
+                    d3.csv(STATION_LOCATIONS)
+                ]);
+                
+                // Process and filter data
+                allData = processRawData(csvData);
+                stationLocations = processStationData(stationData);
+                processedData = allData;
+                
+                // Extract unique values for filters
+                extractUniqueValues();
+                
+                // Populate filter options
+                populateFilterOptions();
+                
+                // Initialize map
+                initMap();
+                
+                // Initial render
+                updateSummary(processedData);
+                updateCharts(processedData);
+                updateTable(processedData);
+                map.on('load',() => updateMap(processedData));
+                
+            } catch (error) {
+                console.error("Error loading data:", error);
+                showError("Failed to load data. Please ensure the CSV files are available and properly formatted.");
+            }
+        }
+        
+        // Initialize Mapbox map
+        function initMap() {
+            map = new mapboxgl.Map({
+                container: 'mbta-map',
+                style: 'mapbox://styles/mapbox/light-v10',
+                center: [-71.0589, 42.3601], // Boston coordinates
+                zoom: 10, // Reduced zoom level to show more area
+                maxBounds: [  // Set bounds to cover entire MBTA service area
+                    [-71.5, 41.8],  // Southwest coordinates
+                    [-70.8, 42.6]   // Northeast coordinates
+                ]
+            });
+            
+            // Add navigation controls
+            map.addControl(new mapboxgl.NavigationControl());
+        }
+        
+        // Process raw CSV data
+        function processRawData(rawData) {
+            return rawData.map(row => {
+                // Convert delay duration to number (already in minutes)
+                const delayMinutes = parseFloat(row.delay_duration) || 0;
+                const delayHours = (delayMinutes / 60).toFixed(1);
+                
+                // Extract line from route_id (handling Green line branches)
+                let line = row.route_id;
+                if (line.startsWith("Green-")) {
+                    line = "Green Line";
+                } else if (line === "Mattapan") {
+                    line = "Mattapan Trolley";
+                } else {
+                    line = line + " Line";
+                }
+                
+                return {
+                    route_id: row.route_id,
+                    line: line,
+                    stop_name: row.stop_name,
+                    year: row.year,
+                    delay_minutes: delayMinutes,
+                    delay_hours: delayHours,
+                    line_color: lineColors[line] || "#666",
+                    delay_class: delayMinutes > 36000 ? "delay-high" : 
+                                delayMinutes > 10000 ? "delay-medium" : ""
+                };
+            });
+        }
+        
+        // Process station location data
+        function processStationData(rawData) {
+            return rawData.map(row => {
+                return {
+                    station: row.station,
+                    line: row.line,
+                    route: row.route,
+                    longitude: parseFloat(row.longitude),
+                    latitude: parseFloat(row.latitude)
+                };
+            });
+        }
+        
+        // Extract unique values for filters
+        function extractUniqueValues() {
+            allData.forEach(d => {
+                uniqueYears.add(d.year);
+                uniqueLines.add(d.line);
+                uniqueStops.add(d.stop_name);
+            });
+        }
+        
+        // Populate filter dropdowns
+        function populateFilterOptions() {
+            const yearFilter = document.getElementById("year-filter");
+            const lineFilter = document.getElementById("line-filter");
+            const stopFilter = document.getElementById("stop-filter");
+            
+            // Clear existing options (keeping "All" option)
+            yearFilter.innerHTML = '<option value="all">All Years</option>';
+            lineFilter.innerHTML = '<option value="all">All Lines</option>';
+            stopFilter.innerHTML = '<option value="all">All Stations</option>';
+            
+            // Add year options
+            Array.from(uniqueYears).sort().forEach(year => {
+                const option = document.createElement("option");
+                option.value = year;
+                option.textContent = year;
+                yearFilter.appendChild(option);
+            });
+            
+            // Add line options
+            Array.from(uniqueLines).sort().forEach(line => {
+                const option = document.createElement("option");
+                option.value = line;
+                option.textContent = line;
+                lineFilter.appendChild(option);
+            });
+            
+            // Add stop options
+            Array.from(uniqueStops).sort().forEach(stop => {
+                const option = document.createElement("option");
+                option.value = stop;
+                option.textContent = stop;
+                stopFilter.appendChild(option);
+            });
+        }
+        
+        // Update summary statistics
+        function updateSummary(filteredData) {
+            const container = d3.select("#summary-container");
+        
+            
+            if (filteredData.length === 0) {
+                container.html('<div class="error">No delay data matches current filters</div>');
+                return;
+            }
+            
+            // Calculate stats
+            const totalDelayMinutes = d3.sum(filteredData, d => d.delay_minutes);
+            const totalDelayHours = (totalDelayMinutes / 60).toFixed(1);
+            const avgDelay = d3.mean(filteredData, d => d.delay_minutes);
+            const maxDelay = d3.max(filteredData, d => d.delay_minutes);
+            
+            // Most affected line
+            const lineCounts = d3.rollup(
+                filteredData,
+                v => d3.sum(v, d => d.delay_minutes),
+                d => d.line
+            );
+            const mostAffectedLine = [...lineCounts.entries()].reduce((a, b) => 
+                a[1] > b[1] ? a : b, ["None", 0]
+            );
+            
+            // Most affected station
+            const stationCounts = d3.rollup(
+                filteredData,
+                v => d3.sum(v, d => d.delay_minutes),
+                d => d.stop_name
+            );
+            const mostAffectedStation = [...stationCounts.entries()].reduce((a, b) => 
+                a[1] > b[1] ? a : b, ["None", 0]
+            );
+            
+            container.html(`
+                <div class="stat-card">
+                    <div class="stat-value">${totalDelayMinutes.toLocaleString()}</div>
+                    <div class="stat-label">Total Delay Minutes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${totalDelayHours}</div>
+                    <div class="stat-label">Total Delay Hours</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${avgDelay.toLocaleString()}</div>
+                    <div class="stat-label">Avg Delay per Station per Year</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${maxDelay.toLocaleString()}</div>
+                    <div class="stat-label">Max Single Delay in Minutes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${mostAffectedLine[0]}</div>
+                    <div class="stat-label">Most Affected Line (${(mostAffectedLine[1]/60).toFixed(1)} hours)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${mostAffectedStation[0]}</div>
+                    <div class="stat-label">Most Affected Station (${(mostAffectedStation[1]/60).toFixed(1)} hours)</div>
+                </div>
+            `);
+        }
+        
+        // Update all charts
+        function updateCharts(filteredData, filters) {
+            
+            // Prepare data for line chart
+            const lineData = Array.from(
+                d3.rollup(
+                    filteredData,
+                    v => d3.sum(v, d => d.delay_minutes),
+                    d => d.line
+                ),
+                ([line, minutes]) => ({ 
+                    line, 
+                    minutes,
+                    color: lineColors[line] || "#666"
+                })
+            ).sort((a, b) => b.minutes - a.minutes);
+            
+            // Prepare data for station chart (top 10)
+            const stationData = Array.from(
+                d3.rollup(
+                    filteredData,
+                    v => d3.sum(v, d => d.delay_minutes),
+                    d => d.stop_name
+                ),
+                ([station, minutes]) => ({ station, minutes })
+            )
+            .sort((a, b) => b.minutes - a.minutes)
+            .slice(0, 10);
+            
+            // Prepare data for pie chart
+            const pieData = Array.from(
+                d3.rollup(
+                    filteredData,
+                    v => d3.sum(v, d => d.delay_minutes),
+                    d => d.line
+                ),
+                ([line, minutes]) => ({ 
+                    line, 
+                    minutes,
+                    color: lineColors[line] || "#666"
+                })
+            ).sort((a, b) => b.minutes - a.minutes);
+            
+            // Prepare data for trend chart
+            const trendData = Array.from(
+                d3.rollup(
+                    filteredData,
+                    v => d3.sum(v, d => d.delay_minutes),
+                    d => d.year,
+                    d => d.line
+                ),
+                ([year, lines]) => {
+                    const obj = { year };
+                    lines.forEach((minutes, line) => {
+                        obj[line] = minutes;
+                    });
+                    return obj;
+                }
+            ).sort((a, b) => a.year - b.year);
+            
+            // Clear previous charts
+            d3.select("#line-chart").html("");
+            d3.select("#station-chart").html("");
+            d3.select("#pie-chart").html("");
+            d3.select("#trend-chart").html("");
+
+            const showmultiplelines = filter.lines !== 'Any'
+            d3.select("#multiple-lines") 
+            
+            // Draw charts if we have data
+            if (lineData.length > 0) {
+                drawBarChart("#line-chart", lineData, "line", "minutes", "Delay Minutes by Line");
+            }
+            
+            if (stationData.length > 0) {
+                drawBarChart("#station-chart", stationData, "station", "minutes", "Top 10 Stations by Delay");
+            }
+            
+            if (pieData.length > 0) {
+                drawPieChart("#pie-chart", pieData);
+            }
+            
+            if (trendData.length > 0) {
+                drawTrendChart("#trend-chart", trendData);
+            }
+        }
+        
+        // Update the map visualization with size representing delay hours and color by line
+        function updateMap(filteredData) {
+
+            
+            // Group data by station and sum delay minutes
+            const stationDelays = Array.from(
+                d3.rollup(
+                    filteredData,
+                    v => ({
+                        delay_minutes: d3.sum(v, d => d.delay_minutes),
+                        delay_hours: d3.sum(v, d => d.delay_minutes) / 60,
+                        line: v[0].line,
+                        line_color: v[0].line_color
+                    }),
+                    d => d.stop_name
+                ),
+                ([stop_name, data]) => ({ stop_name, ...data })
+            );
+            
+            // Merge with station location data
+            const mapData = stationDelays.map(delay => {
+                const station = stationLocations.find(loc => loc.station === delay.stop_name);
+                return station ? {
+                    ...delay,
+                    longitude: station.longitude,
+                    latitude: station.latitude
+                } : null;
+            }).filter(Boolean);
+            
+            // Remove existing layer if it exists
+            if (map.getLayer('delays')) {
+                map.removeLayer('delays');
+            }
+            if (map.getSource('delays')) {
+                map.removeSource('delays');
+            }
+            
+            // Calculate circle sizes based on delay hours
+            const maxDelayHours = d3.max(mapData, d => d.delay_hours) || 1;
+            const sizeScale = d3.scaleSqrt()
+                .domain([0, maxDelayHours])
+                .range([5, 30]);
+            
+            // Add the delay circles to the map
+            map.addSource('delays', {
+                type: 'geojson',
+                data: {
+                    type: 'FeatureCollection',
+                    features: mapData.map(station => ({
+                        type: 'Feature',
+                        geometry: {
+                            type: 'Point',
+                            coordinates: [station.longitude, station.latitude]
+                        },
+                        properties: {
+                            station: station.stop_name,
+                            delay_minutes: station.delay_minutes,
+                            delay_hours: station.delay_hours,
+                            line: station.line,
+                            line_color: station.line_color,
+                            radius: sizeScale(station.delay_hours)
+                        }
+                    }))
+                }
+            });
+            
+            map.addLayer({
+                id: 'delays',
+                type: 'circle',
+                source: 'delays',
+                paint: {
+                    'circle-radius': ['get', 'radius'],
+                    'circle-color': ['get', 'line_color'],
+                    'circle-opacity': 0.8,
+                    'circle-stroke-color': 'white',
+                    'circle-stroke-width': 1
+                }
+            });
+            
+            // Tooltip
+            const tooltip = d3.select("#map-tooltip");
+            
+            // Show tooltip on hover
+            map.on('mousemove', 'delays', (e) => {
+                if (e.features.length > 0) {
+                    const feature = e.features[0];
+                    const delayHours = feature.properties.delay_hours.toFixed(1);
+                    
+                    tooltip.style("visibility", "visible")
+                        .html(`<strong>${feature.properties.station}</strong><br>
+                               Line: ${feature.properties.line}<br>
+                               Delay: ${delayHours} hours`)
+                        .style("left", (e.originalEvent.pageX + 5) + "px")
+                        .style("top", (e.originalEvent.pageY + 5) + "px");
+                }
+            });
+            
+            // Hide tooltip when mouse leaves
+            map.on('mouseleave', 'delays', () => {
+                tooltip.style("visibility", "hidden");
+            });
+            
+            // Change cursor to pointer when hovering over stations
+            map.on('mouseenter', 'delays', () => {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+            
+            map.on('mouseleave', 'delays', () => {
+                map.getCanvas().style.cursor = '';
+            });
+            
+            // Zoom to station when clicked
+            map.on('click', 'delays', (e) => {
+                map.flyTo({
+                    center: e.features[0].geometry.coordinates,
+                    zoom: 15
+                });
+            });
+        }
+        
+        // Draw a bar chart with MBTA line colors
+        function drawBarChart(selector, data, labelField, valueField, title) {
+            const margin = {top: 20, right: 50, bottom: 40, left: 150};
+            const width = 500 - margin.left - margin.right;
+            const height = 300 - margin.top - margin.bottom;
+            
+            const svg = d3.select(selector)
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+            
+            // X scale
+            const x = d3.scaleLinear()
+                .domain([0, d3.max(data, d => d[valueField])])
+                .range([0, width]);
+            
+            // Y scale
+            const y = d3.scaleBand()
+                .domain(data.map(d => d[labelField]))
+                .range([0, height])
+                .padding(0.1);
+            
+            // Tooltip
+            const tooltip = d3.select("body").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0);
+            
+            // Bars
+            svg.selectAll("rect")
+                .data(data)
+                .enter()
+                .append("rect")
+                .attr("x", 0)
+                .attr("y", d => y(d[labelField]))
+                .attr("width", d => x(d[valueField]))
+                .attr("height", y.bandwidth())
+                .attr("fill", d => d.color || "#666") // Use line-specific color
+                .on("mouseover", function(event, d) {
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    tooltip.html(`${d[labelField]}<br>${(d[valueField]/60).toFixed(1)} hours`)
+                        .style("left", (event.pageX + 5) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                })
+                .on("mouseout", function(d) {
+                    tooltip.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                });
+            
+            // X axis
+            const formatx = d3.format('~s')
+            svg.append("g")
+                .attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x).tickFormat(formatx));
+            
+            // Y axis
+            svg.append("g")
+                .call(d3.axisLeft(y));
+            
+            // Add value labels
+            const formatbar = d3.format('.3~s')
+            svg.selectAll("text.bar-label")
+                .data(data)
+                .enter()
+                .append("text")
+                .attr("class", "bar-label")
+                .attr("x", d => x(d[valueField]) + 5)
+                .attr("y", d => y(d[labelField]) + y.bandwidth() / 2)
+                .attr("dy", ".35em")
+                .text(d => formatbar(d[valueField]/60) + " hrs")
+                .style("font-size", "10px")
+                .style("fill", "black");
+        }
+        
+        // Draw a pie chart with MBTA line colors
+        function drawPieChart(selector, data) {
+            const width = 500;
+            const height = 300;
+            const radius = Math.min(width, height) / 2 - 20;
+            
+            const svg = d3.select(selector)
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .append("g")
+                .attr("transform", `translate(${width/2},${height/2})`);
+            
+            // Compute the position of each group on the pie
+            const pie = d3.pie()
+                .value(d => d.minutes)
+                .sort(null);
+            
+            const arc = d3.arc()
+                .innerRadius(0)
+                .outerRadius(radius);
+            
+            // Tooltip
+            const tooltip = d3.select("body").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0);
+            
+            // Build the pie chart
+            const arcs = svg.selectAll("arc")
+                .data(pie(data))
+                .enter()
+                .append("g")
+                .attr("class", "arc");
+            
+            // Add colored arcs using MBTA line colors
+            arcs.append("path")
+                .attr("d", arc)
+                .attr("fill", d => d.data.color || "#666") // Use line-specific color
+                .on("mouseover", function(event, d) {
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    tooltip.html(`${d.data.line}<br>${(d.data.minutes / 60).toFixed(1)} hours (${((d.endAngle - d.startAngle) / (2 * Math.PI) * 100).toFixed(1)}%)`)
+                        .style("left", (event.pageX + 5) + "px")
+                        .style("left", (event.pageX + 5) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                })
+                .on("mouseout", function(d) {
+                    tooltip.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                });
+        
+        }
+        
+        // Draw a trend line chart
+        function drawTrendChart(selector, data) {
+            const margin = {top: 20, right: 50, bottom: 40, left: 90};
+            const width = 500 - margin.left - margin.right;
+            const height = 300 - margin.top - margin.bottom;
+            
+            const svg = d3.select(selector)
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+            
+            // Get all unique lines
+            const lines = Array.from(new Set(allData.map(d => d.line)));
+            
+            // Prepare the data for the stack
+            const stackData = data.map(d => {
+                const obj = { year: d.year };
+                lines.forEach(line => {
+                    obj[line] = d[line] || 0;
+                });
+                return obj;
+            });
+            
+            // Stack the data
+            const stack = d3.stack()
+                .keys(lines)
+                .order(d3.stackOrderNone)
+                .offset(d3.stackOffsetNone);
+            
+            const stackedData = stack(stackData);
+            
+            // X scale (years)
+            const x = d3.scaleBand()
+                .domain(data.map(d => d.year))
+                .range([0, width])
+                .padding(0.2);
+            
+            // Y scale (delay minutes)
+            const y = d3.scaleLinear()
+                .domain([0, d3.max(stackedData[stackedData.length - 1], d => d[1])])
+                .range([height, 0]);
+            
+            // Color scale - use MBTA line colors where available
+            const color = d3.scaleOrdinal()
+                .domain(lines)
+                .range(lines.map(line => lineColors[line] || d3.schemeTableau10[lines.indexOf(line) % 10]));
+            
+            // Tooltip
+            const tooltip = d3.select("body").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0);
+            
+            // Create the stacked bars
+            svg.append("g")
+                .selectAll("g")
+                .data(stackedData)
+                .enter()
+                .append("g")
+                .attr("fill", d => color(d.key))
+                .selectAll("rect")
+                .data(d => d)
+                .enter()
+                .append("rect")
+                .attr("x", d => x(d.data.year))
+                .attr("y", d => y(d[1]))
+                .attr("height", d => y(d[0]) - y(d[1]))
+                .attr("width", x.bandwidth())
+                .on("mouseover", function(event, d) {
+                    const line = d3.select(this.parentNode).datum().key;
+                    const delay = d[1] - d[0];
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    tooltip.html(`${line} in ${d.data.year}<br>${(delay/60).toFixed(1)} hours`)
+                        .style("left", (event.pageX + 5) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                })
+                .on("mouseout", function(d) {
+                    tooltip.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                });
+            
+            // Add X axis
+            svg.append("g")
+                .attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x));
+            
+            // Add Y axis
+            svg.append("g")
+                .call(d3.axisLeft(y).ticks(5));
+
+        }
+        
+        // Apply current filters to data
+        function GetFilterdata(filters) {
+            
+            
+            return allData.filter(d => 
+                (filters.year === "all" || d.year === filters.year) &&
+                (filters.line === "all" || d.line === filters.line) &&
+                (filters.stop === "all" || d.stop_name === filters.stop)
+            );
+        }
+        
+        function Getmenuvalues() {
+            const yearFilter = document.getElementById("year-filter").value;
+            const lineFilter = document.getElementById("line-filter").value;
+            const stopFilter = document.getElementById("stop-filter").value;
+            
+            return {
+                year: yearFilter,
+                line: lineFilter,
+                stop: stopFilter
+            }
+        }
+
+        // Update the table based on current filters and sort
+        function updateTable(processedData) {
+            const container = d3.select("#table-container");
+            container.html("");
+            
+
+            // Apply sort
+            
+            processedData = processedData.slice().sort((a, b) => {
+                const valA = a[sortColumn];
+                const valB = b[sortColumn];
+                return sortDirection === "asc" ? valA - valB : valB - valA;
+            });
+            
+            // Create table
+            const table = container.append("table");
+            
+            // Header
+            const header = table.append("thead").append("tr");
+            
+            const columns = [
+                { id: "line", label: "Line" },
+                { id: "stop_name", label: "Station" },
+                { id: "year", label: "Year" },
+                { id: "delay_minutes", label: "Delay (minutes)" },
+                { id: "delay_hours", label: "Delay (hours)" }
+            ];
+            
+            columns.forEach(col => {
+                header.append("th")
+                    .attr("class", sortColumn === col.id ? `sorted-${sortDirection}` : "")
+                    .text(col.label)
+                    .on("click", () => sortTable(col.id));
+            });
+            
+            // Body
+            const tbody = table.append("tbody");
+            
+            const rows = tbody.selectAll("tr")
+                .data(processedData.slice(0, 100)) // Limit to 100 rows for performance
+                .enter()
+                .append("tr")
+                .attr("class", d => d.delay_class);
+            
+            rows.append("td").text(d => d.line);
+            rows.append("td").text(d => d.stop_name);
+            rows.append("td").text(d => d.year);
+            rows.append("td").text(d => d.delay_minutes.toLocaleString());
+            rows.append("td").text(d => d.delay_hours);
+            
+            if (processedData.length === 0) {
+                container.html('<div class="error">No delay data found for selected filters</div>');
+            } else if (processedData.length > 100) {
+                container.append("div")
+                    .attr("class", "note")
+                    .text(`Showing 100 of ${processedData.length} delay records. Use filters to narrow results.`);
+            } else {
+                container.append("div")
+                    .attr("class", "note")
+                    .text(`Showing ${processedData.length} delay records`);
+            }
+        }
+        
+        // Sort table by column
+        function sortTable(column) {
+            if (sortColumn === column) {
+                sortDirection = sortDirection === "asc" ? "desc" : "asc";
+            } else {
+                sortColumn = column;
+                sortDirection = "desc";
+            }
+            updateTable();
+        }
+        
+        // Helper functions
+        function showLoading() {
+            d3.select("#table-container")
+                .html('<div class="loading">Loading delay data...</div>');
+        }
+        
+        function showError(message) {
+            d3.select("#table-container")
+                .html(`<div class="error">${message}</div>`);
+        }
+        
+        // Event listeners for filters
+        document.getElementById("year-filter").addEventListener("change", function() {
+            const filters = Getmenuvalues()
+            const filtersdata = GetFilterdata(filters)
+            updateSummary(filtersdata);
+            updateCharts(filtersdata);
+            updateTable(filtersdata);
+            updateMap(filtersdata);
+        });
+        
+        document.getElementById("line-filter").addEventListener("change", function() {
+            const filters = Getmenuvalues()
+            const filtersdata = GetFilterdata(filters)
+            updateSummary(filtersdata);
+            updateCharts(filtersdata);
+            updateTable(filtersdata);
+            updateMap(filtersdata);
+        });
+        
+        document.getElementById("stop-filter").addEventListener("change", function() {
+            const filters = Getmenuvalues()
+            const filtersdata = GetFilterdata(filters)
+            updateSummary(filtersdata);
+            updateCharts(filtersdata);
+            updateTable(filtersdata);
+            updateMap(filtersdata);
+        });
+        
+        // Initial load
+        loadData();
+    </script>
+</body>
+</html>
