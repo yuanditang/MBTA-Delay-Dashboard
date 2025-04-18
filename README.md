@@ -15,8 +15,6 @@ The dashboard allows users to:
 - Explore spatial patterns on an **interactive map**
 - Analyze top delay stations, most affected lines, and total delay impact
 
-![MBTA Delay Dashboard Screenshot](screenshot.png)
-<!-- Replace with an actual screenshot of the dashboard -->
 
 ---
 
