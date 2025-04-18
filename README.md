@@ -28,13 +28,6 @@ This interactive web-based dashboard provides a visual and analytical overview o
 - **Mapbox GL JS** – for interactive mapping
 - **TopoJSON & d3-geo** – for geographical data processing
 
-## 📁 File Structure
-
-├── index.html             # Main dashboard (HTML, JS, and CSS embedded)
-├── grouped_delay.csv      # Delay data grouped by year, station, and line
-├── station_location.csv   # Geographic coordinates of MBTA stations
-└── README.md              # Project documentation
-
 
 ## 📊 Data Notes
 
