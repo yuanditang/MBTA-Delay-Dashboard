@@ -1,36 +1,62 @@
-# MBTA Delay Analysis Dashboard 🚇📊
+# 🚇 MBTA Delay Analysis Dashboard
 
-This interactive web-based dashboard provides a visual and analytical overview of delay trends across the MBTA (Massachusetts Bay Transportation Authority) subway system. It enables users to explore delays by year, line, and station using charts, maps, and summary statistics.
+An interactive data visualization dashboard that analyzes subway delay data from the **Massachusetts Bay Transportation Authority (MBTA)** system. This project helps users explore when, where, and how delays happen across subway lines and stations using filters, charts, maps, and tables.
 
-## 🚀 Features
+> Built with **D3.js**, **Mapbox GL JS**, and vanilla **HTML/CSS/JavaScript**.
 
-- 🗂 **Filterable Dashboard**: View delay data by year, subway line, and station.
-- 📊 **Visualizations**:
-  - Bar charts for total delays by line and top stations
-  - Pie chart for delay distribution
-  - Stacked trend chart over the years
-- 🗺 **Interactive Map**:
-  - Circle size indicates delay hours
-  - Color-coded by MBTA line
-  - Click to zoom into station locations
-- 📋 **Data Table**:
-  - Sortable columns
-  - Delay shown in both minutes and hours
-- 📈 **Summary Stats**:
-  - Total delays
-  - Most affected line and station
-  - Max and average delay metrics
+---
 
-## 🧰 Tech Stack
+## 🖼️ Overview
 
-- **HTML, CSS, JavaScript**
-- **D3.js v7** – for data visualization
-- **Mapbox GL JS** – for interactive mapping
-- **TopoJSON & d3-geo** – for geographical data processing
+The dashboard allows users to:
 
+- Filter data by **year**, **subway line**, and **station**
+- View delay statistics and trends through **interactive visualizations**
+- Explore spatial patterns on an **interactive map**
+- Analyze top delay stations, most affected lines, and total delay impact
 
-## 📊 Data Notes
+![MBTA Delay Dashboard Screenshot](screenshot.png)
+<!-- Replace with an actual screenshot of the dashboard -->
 
-- Delays are shown in hours for clarity (minutes / 60).
-- Charts and tooltips are interactive and data-driven.
-- Table rows are highlighted based on severity.
+---
+
+## 🔧 Features
+
+### 🎚 Filters
+- **Year**, **Line**, and **Station** dropdowns dynamically populate from data
+- Filtered views automatically update all visualizations
+
+### 📊 Charts
+- **Bar chart** of total delay minutes by line
+- **Pie chart** showing percentage distribution of delays
+- **Bar chart** of top 10 most delayed stations
+- **Stacked area chart** showing delay trends over time
+
+### 🗺️ Interactive Map
+- Circles sized by delay hours, color-coded by MBTA line
+- Hover to see station info, click to zoom
+- Mapbox-based map centered on Boston
+
+### 📋 Data Table
+- Displays raw records by station, year, and delay duration
+- Sortable columns
+- Rows highlighted based on severity (high/medium/low delay)
+
+### 📈 Summary Statistics
+- Total delay minutes and hours
+- Average delay per station/year
+- Max single delay
+- Most affected line and station
+
+---
+
+## 🧰 Technologies Used
+
+| Tech         | Purpose                          |
+|--------------|----------------------------------|
+| HTML & CSS   | Structure and styling            |
+| JavaScript   | Interactivity and DOM logic      |
+| D3.js v7     | Data visualization               |
+| Mapbox GL JS | Interactive map                  |
+| TopoJSON     | Map geo-processing (if extended) |
+| CSV data     | Used for delays and station info |
