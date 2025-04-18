@@ -260,7 +260,7 @@
         <div>Loading summary statistics...</div>
     </div>
     
-    <div class="chart-row" id = multiple-lines>
+    <div class="chart-row" id = "multiple-lines">
         <div class="chart-col">
             <div class="chart-container">
                 <div class="chart-title">Total Delay Minutes by Line</div>
@@ -366,13 +366,14 @@
                 
                 // Populate filter options
                 populateFilterOptions();
+                const filters = Getmenuvalues();
                 
                 // Initialize map
                 initMap();
                 
                 // Initial render
                 updateSummary(processedData);
-                updateCharts(processedData);
+                updateCharts(processedData,filters);
                 updateTable(processedData);
                 map.on('load',() => updateMap(processedData));
                 
@@ -618,8 +619,8 @@
             d3.select("#pie-chart").html("");
             d3.select("#trend-chart").html("");
 
-            const showmultiplelines = filter.lines !== 'Any'
-            d3.select("#multiple-lines") 
+            const showmultiplelines = filters.line === "all";
+            d3.select("#multiple-lines").classed("hide",!showmultiplelines);
             
             // Draw charts if we have data
             if (lineData.length > 0) {
@@ -1101,7 +1102,7 @@
             const filters = Getmenuvalues()
             const filtersdata = GetFilterdata(filters)
             updateSummary(filtersdata);
-            updateCharts(filtersdata);
+            updateCharts(filtersdata,filters);
             updateTable(filtersdata);
             updateMap(filtersdata);
         });
@@ -1110,7 +1111,7 @@
             const filters = Getmenuvalues()
             const filtersdata = GetFilterdata(filters)
             updateSummary(filtersdata);
-            updateCharts(filtersdata);
+            updateCharts(filtersdata,filters);
             updateTable(filtersdata);
             updateMap(filtersdata);
         });
@@ -1119,7 +1120,7 @@
             const filters = Getmenuvalues()
             const filtersdata = GetFilterdata(filters)
             updateSummary(filtersdata);
-            updateCharts(filtersdata);
+            updateCharts(filtersdata,filters);
             updateTable(filtersdata);
             updateMap(filtersdata);
         });
