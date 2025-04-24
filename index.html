@@ -503,7 +503,7 @@
             const totalDelayMinutes = d3.sum(filteredData, d => d.delay_minutes);
             const totalDelayHours = (totalDelayMinutes / 60).toFixed(1);
             const avgDelay = d3.mean(filteredData, d => d.delay_minutes);
-            const maxDelay = d3.max(filteredData, d => d.delay_minutes);
+            const maxDelay = d3.max(filteredData, d => d.delay_minutes)/60;
             
             // Most affected line
             const lineCounts = d3.rollup(
@@ -1083,7 +1083,7 @@
                 sortColumn = column;
                 sortDirection = "desc";
             }
-            updateTable();
+            updateTable(processedData);
         }
         
         // Helper functions
